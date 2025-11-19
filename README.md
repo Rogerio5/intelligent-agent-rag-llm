@@ -3,6 +3,7 @@
 # 🤖 AGENTE-INTELIGENTE  
 ## 🚀 FastAPI + LangChain + RAG + MLflow + Hugging Face
 
+![Capa do Projeto](docs/assets/agente-inteligente.png)
 
 ---
 
@@ -95,6 +96,8 @@ API: http://localhost:8000
 MLflow: http://localhost:5000
 ```
 
+---
+
 📚 Index RAG
 Adicione documentos em data/docs/*.txt
 
@@ -129,4 +132,5 @@ This project is under the MIT license. For more details, see the `LICENSE` file.
 
 🏁 Conclusão / Conclusion
 
-Este projeto representa uma aplicação prática de LLMs e MLOps, integrando componentes modernos de IA para criar um agente inteligente capaz de responder com contexto, rastrear inferências e escalar via Docker/Kubernetes. Ideal para uso em sistemas de atendimento, assistentes virtuais ou plataformas de conhecimento interno.
+Este projeto representa uma aplicação prática de LLMs e MLOps, integrando componentes modernos de IA para criar um agente inteligente capaz de responder com contexto, rastrear inferências e escalar via Docker/Kubernetes.
+Ideal para uso em sistemas de atendimento, assistentes virtuais ou plataformas de conhecimento interno.
