@@ -85,7 +85,7 @@ http://localhost:8000
 
 http://localhost:8000/docs
 ```
-🐳 Com Docker Compose
+### 🐳 Com Docker Compose
 ```
 docker compose up --build
 
@@ -98,20 +98,20 @@ MLflow: http://localhost:5000
 
 ---
 
-📚 Index RAG
+### 📚 Index RAG
 Adicione documentos em data/docs/*.txt
 
 Use RAGStore.build_or_load_index() e save_index() para construir o índice
 
 ---
 
-🧪 Testes / Tests
+### 🧪 Testes / Tests
 
 pytest -q
 
 ---
 
-🧰 Tecnologias / Technologies
+### 🧰 Tecnologias / Technologies
 
 <p align="left"> <img alt="Python" title="Python" width="50px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"/>
 <img alt="FastAPI" title="FastAPI" width="50px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg"/>
@@ -119,6 +119,12 @@ pytest -q
 <img alt="LangChain" title="LangChain" width="50px" src="https://avatars.githubusercontent.com/u/139903294?s=200&v=4"/>
 <img alt="MLflow" title="MLflow" width="50px" src="https://raw.githubusercontent.com/mlflow/mlflow/master/assets/logo-white.svg"/>
 <img alt="Hugging Face" title="Hugging Face" width="50px" src="https://huggingface.co/front/assets/huggingface_logo.svg"/> </p>
+
+---
+
+## 👨‍💻 Desenvolvedor / Developer
+
+- [Rogerio](https://github.com/Rogerio5)
 
 ---
 
@@ -130,7 +136,7 @@ This project is under the MIT license. For more details, see the `LICENSE` file.
 
 ---
 
-🏁 Conclusão / Conclusion
+## 🏁 Conclusão / Conclusion
 
 Este projeto representa uma aplicação prática de LLMs e MLOps, integrando componentes modernos de IA para criar um agente inteligente capaz de responder com contexto, rastrear inferências e escalar via Docker/Kubernetes.
 Ideal para uso em sistemas de atendimento, assistentes virtuais ou plataformas de conhecimento interno.
