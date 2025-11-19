@@ -71,6 +71,8 @@ A arquitetura combina **FastAPI**, **LangChain**, **MLflow**, **Docker** e **Hug
 - Docker e Docker Compose (opcional, recomendado)  
 - VS Code (recomendado)
 
+---
+
 ### 🔧 Ambiente local (sem Docker)
 
 ```bash
