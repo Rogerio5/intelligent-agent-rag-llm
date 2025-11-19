@@ -1,0 +1,53 @@
+[
+  {
+    "text": "Qual é o horário de atendimento?",
+    "label": "horario",
+    "answer": "Nosso atendimento funciona de segunda a sexta-feira, das 8h às 18h."
+  },
+  {
+    "text": "Vocês oferecem suporte aos sábados?",
+    "label": "suporte_sabado",
+    "answer": "Não, o suporte está disponível apenas em dias úteis."
+  },
+  {
+    "text": "Qual é o telefone de contato?",
+    "label": "telefone",
+    "answer": "Você pode ligar para (11) 1234-5678 durante o horário comercial."
+  },
+  {
+    "text": "Vocês atendem online?",
+    "label": "atendimento_online",
+    "answer": "Sim, oferecemos atendimento online via chat e e-mail."
+  },
+  {
+    "text": "Quais formas de pagamento vocês aceitam?",
+    "label": "pagamento",
+    "answer": "Aceitamos cartões de crédito, débito, Pix e boletos bancários."
+  },
+  {
+    "text": "Vocês fazem entregas?",
+    "label": "entrega",
+    "answer": "Sim, realizamos entregas em todo o território nacional."
+  },
+  {
+    "text": "Qual é o prazo de entrega?",
+    "label": "prazo_entrega",
+    "answer": "O prazo de entrega varia entre 3 e 7 dias úteis, dependendo da região."
+  },
+  {
+    "text": "Vocês têm loja física?",
+    "label": "loja_fisica",
+    "answer": "Sim, nossa loja física fica em São Paulo, na Avenida Central, 123."
+  },
+  {
+    "text": "Vocês oferecem garantia nos produtos?",
+    "label": "garantia",
+    "answer": "Todos os produtos possuem garantia de 12 meses contra defeitos de fabricação."
+  },
+  {
+    "text": "Vocês oferecem desconto para compras em quantidade?",
+    "label": "desconto",
+    "answer": "Sim, oferecemos descontos progressivos para compras em grandes quantidades."
+  }
+]
+

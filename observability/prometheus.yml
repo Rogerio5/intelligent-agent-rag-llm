@@ -1,0 +1,26 @@
+global:
+  scrape_interval: 15s       # intervalo padrão de coleta
+  evaluation_interval: 15s   # intervalo de avaliação de regras
+
+# Alertas globais podem ser configurados aqui
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets: []
+
+scrape_configs:
+  # Scrape da própria API FastAPI
+  - job_name: "agente-inteligente"
+    metrics_path: /metrics
+    scheme: http
+    static_configs:
+      - targets: ["localhost:8000"]
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: instance
+        replacement: "fastapi"
+
+  # Scrape do próprio Prometheus (auto-monitoramento)
+  - job_name: "prometheus"
+    static_configs:
+      - targets: ["localhost:9090"]

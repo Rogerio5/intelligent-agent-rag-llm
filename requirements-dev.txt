@@ -1,0 +1,18 @@
+# Requisitos principais do projeto
+-r requirements.txt
+
+# Testes
+pytest==8.3.3
+pytest-cov==5.0.0
+
+# Linting e estilo
+black==24.4.0
+flake8==7.0.0
+isort==5.13.2
+
+# Tipagem e análise estática
+mypy==1.10.0
+types-requests==2.32.0.20240602
+
+# Ferramentas auxiliares
+pre-commit==3.7.0

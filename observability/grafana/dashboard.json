@@ -1,0 +1,70 @@
+{
+  "id": null,
+  "title": "Agente Inteligente - Observabilidade",
+  "tags": ["fastapi", "prometheus", "mlops"],
+  "timezone": "browser",
+  "schemaVersion": 36,
+  "version": 2,
+  "panels": [
+    {
+      "type": "graph",
+      "title": "Latência média (ms)",
+      "targets": [
+        {
+          "expr": "rate(http_request_duration_seconds_sum[1m]) / rate(http_request_duration_seconds_count[1m]) * 1000",
+          "legendFormat": "latência média"
+        }
+      ],
+      "datasource": "Prometheus",
+      "gridPos": { "x": 0, "y": 0, "w": 12, "h": 8 }
+    },
+    {
+      "type": "graph",
+      "title": "Requisições por rota",
+      "targets": [
+        {
+          "expr": "sum(rate(http_requests_total[1m])) by (handler)",
+          "legendFormat": "{{handler}}"
+        }
+      ],
+      "datasource": "Prometheus",
+      "gridPos": { "x": 12, "y": 0, "w": 12, "h": 8 }
+    },
+    {
+      "type": "stat",
+      "title": "Acurácia média do modelo",
+      "targets": [
+        {
+          "expr": "model_accuracy",
+          "legendFormat": "acurácia"
+        }
+      ],
+      "datasource": "Prometheus",
+      "gridPos": { "x": 0, "y": 8, "w": 6, "h": 4 }
+    },
+    {
+      "type": "stat",
+      "title": "Healthcheck",
+      "targets": [
+        {
+          "expr": "up{job=\"agente-inteligente\"}",
+          "legendFormat": "status"
+        }
+      ],
+      "datasource": "Prometheus",
+      "gridPos": { "x": 6, "y": 8, "w": 6, "h": 4 }
+    },
+    {
+      "type": "graph",
+      "title": "Erros por status code",
+      "targets": [
+        {
+          "expr": "sum(rate(http_requests_total{status!~\"2..\"}[1m])) by (status)",
+          "legendFormat": "Erro {{status}}"
+        }
+      ],
+      "datasource": "Prometheus",
+      "gridPos": { "x": 12, "y": 8, "w": 12, "h": 8 }
+    }
+  ]
+}

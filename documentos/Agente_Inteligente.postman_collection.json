@@ -1,0 +1,73 @@
+{
+  "info": {
+    "name": "Agente_Inteligente",
+    "_postman_id": "12345678-abcd-efgh-ijkl-987654321000",
+    "description": "Coleção de testes para a API Agente Inteligente (FastAPI).",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "01 - Status da API (GET /)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/",
+          "host": ["{{base_url}}"],
+          "path": [""]
+        }
+      }
+    },
+    {
+      "name": "02 - Treinar modelo (POST /train)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"dataset_path\": \"/data/faq.json\",\n  \"params\": { \"epochs\": 5, \"learning_rate\": 0.01 }\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/train",
+          "host": ["{{base_url}}"],
+          "path": ["train"]
+        }
+      }
+    },
+    {
+      "name": "03 - Fazer pergunta ao agente (POST /ask)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"question\": \"Vocês atendem online?\",\n  \"user_id\": \"rogerio\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/ask",
+          "host": ["{{base_url}}"],
+          "path": ["ask"]
+        }
+      }
+    },
+    {
+      "name": "04 - Consultar métricas (GET /metrics)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/metrics",
+          "host": ["{{base_url}}"],
+          "path": ["metrics"]
+        }
+      }
+    }
+  ],
+  "variable": [
+    { "key": "base_url", "value": "http://127.0.0.1:8000" }
+  ]
+}

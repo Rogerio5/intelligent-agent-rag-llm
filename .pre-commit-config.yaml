@@ -1,0 +1,26 @@
+repos:
+  # Formatação automática com Black
+  - repo: https://github.com/psf/black
+    rev: 24.4.0
+    hooks:
+      - id: black
+        language_version: python3
+
+  # Organização automática dos imports
+  - repo: https://github.com/pre-commit/mirrors-isort
+    rev: v5.13.2
+    hooks:
+      - id: isort
+
+  # Linting e verificação de estilo
+  - repo: https://github.com/pre-commit/mirrors-flake8
+    rev: v7.0.0
+    hooks:
+      - id: flake8
+
+  # Verificação de tipos estáticos com MyPy
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.10.0
+    hooks:
+      - id: mypy
+        additional_dependencies: [types-requests]

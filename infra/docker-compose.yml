@@ -1,0 +1,74 @@
+version: '3.8'
+
+networks:
+  agente-net:
+
+volumes:
+  mlflow_data:
+  grafana_data:
+
+services:
+  api:
+    build:
+      context: ..
+      dockerfile: infra/Dockerfile
+    container_name: agente-api
+    ports:
+      - "8000:8000"
+    command: uvicorn api.main:app --host 0.0.0.0 --port 8000
+    volumes:
+      - ../:/app
+      - ../data:/app/data
+    environment:
+      - MODEL_NAME=gpt2
+      - INDEX_DIR=/app/data/index
+      - MLFLOW_TRACKING_URI=http://mlflow:5000
+      - MLFLOW_EXPERIMENT=agente-inteligente
+      - PYTHONUNBUFFERED=1
+    depends_on:
+      - mlflow
+      - prometheus
+    networks:
+      - agente-net
+
+  mlflow:
+    image: ghcr.io/mlflow/mlflow:v2.9.2
+    container_name: mlflow
+    command: >
+      mlflow server --host 0.0.0.0 --port 5000
+      --backend-store-uri sqlite:///mlflow.db
+      --default-artifact-root /mlflow_artifacts
+    ports:
+      - "5000:5000"
+    volumes:
+      - mlflow_data:/mlflow_artifacts
+    networks:
+      - agente-net
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ../observability/prometheus.yml:/etc/prometheus/prometheus.yml
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+    networks:
+      - agente-net
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ../observability/grafana/provisioning:/etc/grafana/provisioning
+    environment:
+      - GF_SECURITY_ADMIN_USER=${GRAFANA_USER:-admin}
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASSWORD:-admin}
+    depends_on:
+      - prometheus
+    networks:
+      - agente-net
